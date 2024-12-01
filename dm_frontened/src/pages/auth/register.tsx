@@ -1,5 +1,5 @@
 // src/RegisterPage.tsx
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   TextField,
   Button,
@@ -61,6 +61,17 @@ const RegisterPage: React.FC = () => {
   const handleGoToLogin = () => {
     navigate("/login");
   };
+
+  const authToken=localStorage.getItem("userinfo"); 
+
+  useEffect(()=>{
+    if(authToken){
+      navigate('/shoplist')
+    }else{
+      navigate('/register')
+    }
+  },[])
+
   return (
     <Container sx={{mt:'5rem'}}>
       <Box sx={{ display: "flex", justifyContent: "space-around",flexWrap:'wrap-reverse' }}>
@@ -145,7 +156,7 @@ const RegisterPage: React.FC = () => {
             <Box sx={{ p: "0px", m: "0px", textAlign: "left" }}>
               <Box sx={{ display: "flex", justifyContent: "space-between" }}>
                 <span>Password</span>
-                <Button sx={{ fontSize: "11px" }} onClick={()=>{setShowPassword(!showPassword)}}>{showPassword?"Hide":"Show"}</Button>
+                <Button variant="outlined" sx={{ fontSize: "11px" }} onClick={()=>{setShowPassword(!showPassword)}}>{showPassword?"Hide":"Show"}</Button>
               </Box>
 
               <TextField
@@ -180,7 +191,7 @@ const RegisterPage: React.FC = () => {
             <Button
               variant="contained"
               color="primary"
-              sx={{ mt: 2, backgroundColor: "#FF6C37", mb: "1rem" }}
+              sx={{ mt: 2, backgroundColor: "#FF6C37", mb: "1rem",cursor:'pointer' }}
               fullWidth
               onClick={handleSubmit}
             >
@@ -191,7 +202,7 @@ const RegisterPage: React.FC = () => {
             </span>
 
             <Typography
-          sx={{ color: "#0265d2" ,mt:'1rem'}}
+          sx={{ color: "#0265d2" ,mt:'1rem',cursor:'pointer'}}
           onClick={() => navigate("/login")}
         >
           Already registered user sigin

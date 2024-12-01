@@ -132,7 +132,7 @@ export default function Addproduct(props: propsType) {
         />
       </DialogContent>
       <DialogActions>
-        <Button onClick={handleButton}>{isedit?"Edit product":"Add product"}</Button>
+        <Button variant="outlined" onClick={handleButton}>{isedit?"Edit product":"Add product"}</Button>
       </DialogActions>
     </Dialog>
   );

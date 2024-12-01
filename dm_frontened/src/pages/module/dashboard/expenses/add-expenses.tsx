@@ -177,7 +177,7 @@ export default function Addexpenses(props: propsType) {
         />
       </DialogContent>
       <DialogActions>
-        <Button onClick={handleButton}>
+        <Button onClick={handleButton} variant="outlined">
           {isedit ? "Save expenses" : "Add expenses"}
         </Button>
       </DialogActions>

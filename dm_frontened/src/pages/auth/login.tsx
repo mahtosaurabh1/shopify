@@ -1,5 +1,5 @@
 // src/RegisterPage.tsx
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   TextField,
   Button,
@@ -24,6 +24,9 @@ const Login: React.FC = () => {
     email: "",
     password: "",
   });
+
+    
+    const authToken=localStorage.getItem("userinfo"); 
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -56,6 +59,14 @@ const Login: React.FC = () => {
   const handleGotoRegister = () => {
     navigate("/register");
   };
+
+  useEffect(()=>{
+    if(authToken){
+      navigate('/shoplist')
+    }else{
+      navigate('/login')
+    }
+  },[])
   return (
     <Container sx={{ width: "26rem", mt: "5rem" }}>
       <Paper
@@ -132,7 +143,7 @@ const Login: React.FC = () => {
 
       <Box sx={{ display: "flex", justifyContent: "center", mt: "1rem" }}>
         <span
-          style={{ color: "#0265d2" }}
+          style={{ color: "#0265d2",cursor:'pointer' }}
           onClick={() => navigate("/register")}
         >
           Create free account

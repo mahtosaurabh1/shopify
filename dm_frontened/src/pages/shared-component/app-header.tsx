@@ -86,7 +86,7 @@ function Appheader() {
           disableGutters
           sx={{ display: "flex", justifyContent: "space-between" }}
         >
-          <Typography
+          {/* <Typography
             variant="h6"
             noWrap
             component="a"
@@ -103,7 +103,10 @@ function Appheader() {
             }}
           >
             U
-          </Typography>
+          </Typography> */}
+          <Box onClick={handleGotoHome} sx={{cursor:'pointer'}}>
+            <img src="/image/logo.png" alt="logo" style={{width:'8rem',height:'3rem'}} />
+          </Box>
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>

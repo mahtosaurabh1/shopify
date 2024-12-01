@@ -32,8 +32,6 @@ import DeleteOutlineRoundedIcon from "@mui/icons-material/DeleteOutlineRounded";
 import ModeEditOutlinedIcon from "@mui/icons-material/ModeEditOutlined";
 import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
 import { Shop2, Shop2Outlined } from "@mui/icons-material";
-import Shopicon from "../../../shared/icon/shop.icon";
-import { red } from "@mui/material/colors";
 
 function Shop() {
   const [open, setOpen] = useState<boolean>(false);
@@ -175,10 +173,9 @@ function Shop() {
       
               <Stack
                 sx={{ height: "100%",display:'flex',alignItems:'center',justifyContent:'center' }}
-                alignItems={"flex-start"}
                 onClick={() => handleGotoBusinessPage(val)}
               >
-               <Shop2 />
+               <img src='/image/shop-logo.png' alt="logo" style={{width:'3rem',height:'3rem'}}/>
               </Stack>
 
               <CardHeader

@@ -183,7 +183,7 @@ export default function Filter(props: propsType) {
         </LocalizationProvider>
       </DialogContent>
       <DialogActions>
-        <Button onClick={handleButton}>Apply</Button>
+        <Button onClick={handleButton} variant="outlined">Apply</Button>
       </DialogActions>
     </Dialog>
   );

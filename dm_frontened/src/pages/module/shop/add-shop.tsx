@@ -111,7 +111,7 @@ export default function Addshop(props: propsType) {
       onClose={handleDialogClose}
       aria-describedby="alert-dialog-slide-description"
     >
-      <DialogTitle>{isedit ? "Edit shop" : "Add shop"}</DialogTitle>
+      <DialogTitle>{isedit ? "Edit shop" : "Crate shop"}</DialogTitle>
       <IconButton
         aria-label="close"
         onClick={handleDialogClose}
@@ -140,8 +140,8 @@ export default function Addshop(props: propsType) {
         />
       </DialogContent>
       <DialogActions>
-        <Button onClick={handleButton}>
-          {isedit ? "Edit shop" : "Add shop"}
+        <Button onClick={handleButton} variant="outlined">
+          {isedit ? "Save" : "Create"}
         </Button>
       </DialogActions>
     </Dialog>

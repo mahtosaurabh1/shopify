@@ -363,7 +363,7 @@ export default function BuySellPopup(props: propsType) {
         </FormControl>
       </DialogContent>
       <DialogActions>
-        <Button onClick={handleButton}>{isedit ? "Edit" : "Save"}</Button>
+        <Button onClick={handleButton} variant="outlined">{isedit ? "Edit" : "Save"}</Button>
       </DialogActions>
     </Dialog>
   );
